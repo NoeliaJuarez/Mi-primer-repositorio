@@ -1,4 +1,5 @@
 package BancoTonyStark;
+//CLASE PERSONA
 class Persona{
     String nombre;
     String sexo;
@@ -16,15 +17,34 @@ void hablar(){
     
 }
 }
+class Cuenta{
+    double saldo;
 
+    Cuenta(double SaldoInicial){
+saldo = SaldoInicial;
+    }
+    void cargar(double cantidad){
+saldo = saldo - cantidad;
+    }
+
+    void abonar(double cantidad){
+saldo = saldo*cantidad;
+    }
+}
+//CLASE CLIENTE
 class Cliente extends Persona{
 int numero;
+Cuenta cuenta;
 
 Cliente(int numero,String sexo, int edad,String nombre){
 super (nombre,sexo,edad);
 this.numero=numero;
 }
+void asociarCuenta(Cuenta cuenta){
+this.cuenta=cuenta;
 }
+}
+//CLASE BANCO
 class Banco{
     String nombre;
     Cliente  clientes[];
@@ -56,10 +76,11 @@ class Banco{
         }
     }
 }
-
+//CLASE PROGRAMA
 class Programa{
     public static void main(String[] args){
        System.out.println("Welcome to the bank"); 
+       System.out.println("Shingadamadre");
 
     }
 }
